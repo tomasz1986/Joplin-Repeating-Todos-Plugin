@@ -1,7 +1,8 @@
 import joplin from "api";
 import { updateAllRecurrences } from "./recurrence";
+import { updateOverdueTodos } from "./recurrence";
 
-var updating = null
+var updating = false;
 var timer = null
 
 export async function setupTimer(){
@@ -10,6 +11,7 @@ export async function setupTimer(){
         if (updating) return;
         updating = true;
         await updateAllRecurrences();
+        await updateOverdueTodos()
         updating = false;
     }, await joplin.settings.value("updateFrequency") * 1000);
 }

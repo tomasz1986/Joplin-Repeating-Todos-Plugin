@@ -74,7 +74,7 @@ export async function updateOverdueTodos(){
             await sleep(1000)    
         }
     }
-    joplin.views.dialogs.showMessageBox("Overdue Tasks Rescheduled")
+    // joplin.views.dialogs.showMessageBox("Overdue Tasks Rescheduled")
 }
 
 /** processTodo *************************************************************************************************************************************
